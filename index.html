@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NETSAFI - Affordable 5G Internet Bundles</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to bottom, #006400, #00aa00);
+      color: #000;
+    }
+    .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  background: #25D366;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+}
+
+.whatsapp-float img {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+}
+
+.whatsapp-label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: linear-gradient(to right, green, gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      background-color: #e6f6e6;
+      border-radius: 8px;
+      padding: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .package {
+      background-color: #006400;
+      color: white;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .package:hover {
+      background-color: #004f00;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 1rem;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      border-radius: 1.2rem;
+      padding: 2rem;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0, 100, 0, 0.2);
+      overflow-y: auto;
+      max-height: 95vh;
+    }
+
+    .modal-content h2 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      background: linear-gradient(to right, green, gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-content p, .modal-content ol {
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .modal-content h3 {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+    .modal-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+}
+
+    .till-box {
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: #f0f0f0;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      margin: 0.5rem 0 1rem;
+      display: inline-block;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.3rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+      border: none;
+      transition: background 0.3s;
+    }
+
+    .btn.copy {
+      background: #006400;
+      color: white;
+    }
+
+    .btn.copy:hover {
+      background: #004f00;
+    }
+
+    .btn.close {
+      background: #006400;
+      color: black;
+    }
+
+    .steps {
+      margin: 1rem 0;
+      padding-left: 1.2rem;
+    }
+
+    .steps li {
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 480px) {
+      .modal-content {
+        padding: 1.2rem;
+      }
+
+      .till-box {
+        font-size: 1rem;
+      }
+.purchase-ticker {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f0fff0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 6px 0;
+}
+
+.ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker-scroll 30s linear infinite;
+}
+
+.ticker-track span {
+  display: inline-block;
+  margin-right: 60px;
+  font-size: 14px;
+  color: #006400;
+  font-weight: 500;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+      .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<div class="purchase-ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <!-- JS will inject scrolling messages here -->
+  </div>
+</div>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 class="logo">NETSAFI INTERNET</h1>
+      <p class="subtitle">Affordable Internet Packages<br><em>(Available on all networks)</em></p>
+            <div class="package" onclick="showModal('3 Days - 8GB', 49)">3 Days - 8GB Ksh 49</div>
+
+      <div class="package" onclick="showModal('7 Days - 25GB', 99)">7 Days - 25GB Ksh 99</div>
+      <div class="package" onclick="showModal('14 Days - 45GB', 169)">14 Days - 45GB Ksh 169</div>
+      <div class="package" onclick="showModal('30 Days - Unlimited', 299)">30 Days - Unlimited Ksh 299</div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2>NETSAFI DATA🛰️</h2>
+      <p>Affordable Internet Packages</p> <p><em>(Available on all networks)</em></p>
+      <p><strong id="selected-package"></strong></p>
+
+      <h3>Payment Instructions</h3>
+      <p><span id="instructions"></span></p>
+      <p style="font-weight: bold; margin-top: 1rem;"></p>
+
+      <p><strong>Buy Goods Till Number:</strong></p>
+      <div class="till-box" id="till-number">6690508</div>
+
+      <button class="btn copy" onclick="copyTill()">Copy</button>
+
+      <ol class="steps">
+        <li>Go to M-Pesa on your phone</li>
+        <li>Select Buy Goods and Services</li>
+        <li>Enter Till Number: <strong>6690508</strong></li>
+        <li>Input the exact amount for your package</li>
+        <li>Enter your M-Pesa PIN</li>
+        <li>Confirm payment details and send</li>
+        <li>Wait for confirmation SMS</li>
+        <li>Your package activates within 5 minutes</li>
+        <li>Enjoy your high-speed internet!</li>
+      </ol>
+
+      <p>If any issues occur, contact support with your payment confirmation message.</p>
+
+<div class="modal-footer">
+  <button class="btn close" onclick="hideModal()">✓Understood</button>
+</div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const selectedPackage = document.getElementById('selected-package');
+    const instructions = document.getElementById('instructions');
+    const till = "6690508";
+
+    function showModal(packageName, price) {
+      selectedPackage.innerText = `${packageName} (Ksh ${price})`;
+      instructions.innerHTML = `GO TO MPESA ON YOUR PHONE AND Send <strong>Ksh ${price}</strong> TO THE TILL NUMBER BELOW`;
+      modal.style.display = 'flex';
+    }
+
+    function hideModal() {
+      modal.style.display = 'none';
+    }
+
+    function copyTill() {
+      navigator.clipboard.writeText(till).then(() => {
+        alert("Till number copied to clipboard!");
+      });
+    }
+  </script>
+<script>
+  const packages = ['25GB', '45GB', 'Unlimited', '30GB'];
+  const ticker = document.getElementById('tickerTrack');
+
+  function getRandomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function generateRandomPhone() {
+    const prefix = '+2547';
+    const middle = Math.floor(Math.random() * 90 + 10); // 10–999
+    const suffix = Math.floor(Math.random() * 900 + 100); // 100–999
+    return `${prefix}${middle.toString().padStart(2, '0')}***${suffix}`;
+  }
+
+  function addMessage() {
+    const msg = `${generateRandomPhone()} just bought ${getRandomItem(packages)}`;
+    const span = document.createElement('span');
+    span.textContent = msg;
+    ticker.appendChild(span);
+  }
+
+  // Initial load
+  for (let i = 0; i < 6; i++) addMessage();
+
+  // Keep updating every few seconds
+  setInterval(addMessage, 25000);
+</script>
+  <<a href="https://wa.me/254106842919?text=Hello%20Starnet%20Support%2C%20I%20need%20help%20with%20a%20package."
+   class="whatsapp-float"
+   target="_blank"
+   title="Chat with Support">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+  <span class="whatsapp-label">Need Help?</span>
+</a>
+  
+</body>
+</html>
