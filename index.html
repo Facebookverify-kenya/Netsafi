@@ -186,7 +186,37 @@
     .steps li {
       margin-bottom: 6px;
     }
+.purchase-ticker {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f0fff0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 6px 0;
+}
 
+.ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker-scroll 30s linear infinite;
+}
+
+.ticker-track span {
+  display: inline-block;
+  margin-right: 60px;
+  font-size: 14px;
+  color: #006400;
+  font-weight: 500;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
     @media (max-width: 480px) {
       .modal-content {
         padding: 1.2rem;
